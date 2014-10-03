@@ -113,9 +113,15 @@ int main(int argc, char *argv[])
     IBOX_COMM_PKT_HDR *phdr;
     PKT_SYSCMD *pcmd;
     char *cmd = "id";
+    in_addr_t dst_addr;
+   
+    dst_addr = INADDR_BROADCAST;
 
     if (argc > 1)
         cmd = argv[1];
+
+    if (argc > 2)
+        dst_addr = inet_addr(argv[2]);
 
     out_sd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if (out_sd == -1) {
@@ -155,7 +161,7 @@ int main(int argc, char *argv[])
 
     memset(&dst, 0, sizeof(dst));
     dst.sin_family = AF_INET;
-    dst.sin_addr.s_addr = INADDR_BROADCAST;
+    dst.sin_addr.s_addr = dst_addr;
     dst.sin_port = htons(9999);
 
     memset(buf, 0, sizeof(buf));
