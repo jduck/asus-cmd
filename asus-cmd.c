@@ -128,26 +128,22 @@ int main(int argc, char *argv[])
         perror("outgoing socket");
         return 1;
     }
-    printf("[*] opened sd %d for outgoing comms\n", out_sd);
 
     in_sd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
     if (in_sd == -1) {
         perror("incoming socket");
         return 1;
     }
-    printf("[*] opened sd %d for incoming comms\n", in_sd);
 
     if (setsockopt(out_sd, SOL_SOCKET, SO_BROADCAST, &flag, sizeof(flag)) == -1) {
         perror("setsockopt");
         return 1;
     }
-    printf("[*] set SO_BROADCAST on outgoing\n");
 
     if (setsockopt(in_sd, SOL_SOCKET, SO_BROADCAST, &flag, sizeof(flag)) == -1) {
         perror("setsockopt");
         return 1;
     }
-    printf("[*] set SO_BROADCAST on incoming\n");
 
     memset(&dst, 0, sizeof(dst));
     dst.sin_family = AF_INET;
