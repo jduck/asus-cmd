@@ -100,7 +100,9 @@ Remove the remote command execution functionality from this service. Even if it 
 
 Workaround
 ----------
-Disable the *infosvr* service by killing the process after each boot. For extra fun/irony, use the exploit to do this.
+Eric Sauvageau (@RMerl) recommends firewalling port 9999 off. For more information see [his post](http://forums.smallnetbuilder.com/showthread.php?t=21774) on the Small Net Builder forum.
+
+Alternatively, disable the *infosvr* service by killing the process after each boot. For extra fun/irony, use the exploit to do this:
 
 ```
 $ ./asus-cmd "killall -9 infosvr"
