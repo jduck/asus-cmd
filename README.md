@@ -5,7 +5,7 @@ Several models of ASUS's routers include a service called *infosvr* that listens
 
 CVE
 ---
-The CVE assigned to this issue is CVE-2014-10000.
+The CVE assigned to this issue is CVE-2014-9583 (alas, not CVE-2014-10000 after all :-/).
 
 Affected Versions
 -----------------
