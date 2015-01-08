@@ -102,6 +102,13 @@ Workaround
 ----------
 Disable the *infosvr* service by killing the process after each boot. For extra fun/irony, use the exploit to do this.
 
+```
+$ ./asus-cmd "killall -9 infosvr"
+[...]
+```
+
+NOTE: you won't get response to this command. Again, this will need to be done each time the device restarts.
+
 Exploit
 -------
 The repository in which this advisory resides contains a working exploit for this issue.
