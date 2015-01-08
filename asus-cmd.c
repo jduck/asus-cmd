@@ -10,13 +10,16 @@
 #include <string.h>
 #include <unistd.h>
 #include <time.h>
+#include <signal.h>
+#include <errno.h>
 
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 
 
-int g_done = 0;
+#define WAIT_TIMEOUT 5
+volatile sig_atomic_t g_done = 0;
 
 
 /* START IBOX related stuff =) */
@@ -102,6 +105,29 @@ typedef struct iboxPKTCmd
 #pragma pack()
 
 /* END IBOX related stuff */
+void alarm_handler(int signo)
+{
+    g_done = 1;
+}
+
+/* timeout related code *
+ *
+ * setup the signal handler, etc
+ */
+int set_timeout(int timeout)
+{
+    struct sigaction nsa, osa;
+
+    memset(&nsa, 0, sizeof(nsa));
+    nsa.sa_handler = alarm_handler;
+    if (sigaction(SIGALRM, &nsa, &osa) == -1) {
+        perror("set_timeout: sigaction error");
+        return 0;
+    }
+    alarm(timeout);
+    return 1;
+}
+/* END timeout related code */
 
 
 int main(int argc, char *argv[])
@@ -181,7 +207,7 @@ int main(int argc, char *argv[])
     }
     printf("[*] sent command: %s\n", cmd);
 
-    //alarm(5);
+    set_timeout(WAIT_TIMEOUT);
     while (!g_done) {
         ssize_t nr;
         socklen_t sklen;
@@ -190,6 +216,8 @@ int main(int argc, char *argv[])
         memset(inbuf, 0, sizeof(inbuf));
         nr = recvfrom(in_sd, inbuf, sizeof(inbuf), 0, (struct sockaddr *)&src, &sklen);
         if (nr == -1) {
+            if (errno == EINTR)
+                continue;
             perror("recvfrom");
             return 1;
         }
