@@ -7,6 +7,10 @@ CVE
 ---
 The CVE assigned to this issue is CVE-2014-10000.
 
+Affected Versions
+-----------------
+Currently, all known firmware versions for applicable routers (RT-AC66U, RT-N66U, etc.) are assumed vulnerable. Testing was performed against 3.0.0.376.2524-g0013f52.
+
 Technical Details
 -----------------
 Consider the following excerpt from the [ASUSWRT-Merlin project](https://github.com/RMerl/asuswrt-merlin), which is an enhanced fork of ASUS's code. You can view the file in it's entirety (recommended for extra lulz) [here](https://github.com/RMerl/asuswrt-merlin/blob/9ebbc9dcab0b1243d703984aa02dbdb7093ccc12/release/src/router/infosvr/common.c].
@@ -98,6 +102,10 @@ Workaround
 ----------
 Disable the *infosvr* service by killing the process after each boot. For extra fun/irony, use the exploit to do this.
 
+Exploit
+-------
+The repository in which this advisory resides contains a working exploit for this issue.
+
 Example exploit output:
 -----------------------
 
@@ -114,3 +122,4 @@ extendno_org=2524-g0013f52
 extendno=2524-g0013f52
 firmver=3.0.0.4
 ```
+
