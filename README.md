@@ -100,6 +100,8 @@ Remove the remote command execution functionality from this service. Even if it 
 
 Workaround
 ----------
+David Longenecker recommends using a script (JFFS) in combination with the *script_usbmount* nvram setting to kill the *infosvr* process on boot. For more information check out [his blog post](http://dnlongen.blogspot.com/2015/01/asus-bug-lets-those-on-your-local.html).
+
 Eric Sauvageau (@RMerl) recommends firewalling port 9999 off. For more information see [his post](http://forums.smallnetbuilder.com/showthread.php?t=21774) on the Small Net Builder forum.
 
 Alternatively, disable the *infosvr* service by killing the process after each boot. For extra fun/irony, use the exploit to do this:
