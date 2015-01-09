@@ -132,3 +132,9 @@ extendno=2524-g0013f52
 firmver=3.0.0.4
 ```
 
+Other Links
+-----------
+
+"SECURITY: LAN-side security hole - mitigation", http://forums.smallnetbuilder.com/showthread.php?t=21774
+"Got an Asus router? Someone on your network can probably hack it", http://arstechnica.com/security/2015/01/got-an-asus-router-someone-on-your-network-can-probably-hack-it/
+
