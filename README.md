@@ -137,16 +137,16 @@ firmver=3.0.0.4
 Other Links
 -----------
 
-"ASUSWRT 3.0.0.4.376_1071 - LAN Backdoor Command Execution"
-(this triggered my publishing. his exploit is also mirrored in the others/ directory)
+"ASUSWRT 3.0.0.4.376_1071 - LAN Backdoor Command Execution"<br />
+(this triggered my publishing. his exploit is also mirrored in the others/ directory)<br />
 http://www.exploit-db.com/exploits/35688/
 
-"SECURITY: LAN-side security hole - mitigation"
+"SECURITY: LAN-side security hole - mitigation"<br />
 http://forums.smallnetbuilder.com/showthread.php?t=21774
 
-"Got an Asus router? Someone on your network can probably hack it"
+"Got an Asus router? Someone on your network can probably hack it"<br />
 http://arstechnica.com/security/2015/01/got-an-asus-router-someone-on-your-network-can-probably-hack-it/
 
-"ASUS bug lets those on your local network own your wireless router"
+"ASUS bug lets those on your local network own your wireless router"<br />
 http://dnlongen.blogspot.com/2015/01/asus-bug-lets-those-on-your-local.html
 
