@@ -1,7 +1,7 @@
 ASUS Router infosvr UDP Broadcast root Command Execution
 ========================================================
 
-Several models of ASUS's routers include a service called *infosvr* that listens on UDP broadcast port 9999 on the LAN interface. It's used by one of ASUS's tools to ease router configuration by automatically locating routers on the local subnet. This service runs with *root* privileges and contains an unauthenticated command execution vulnerability. The source code for this service, as well as the rest of the router, is available from [ASUS's Support Site](http://support.asus.com/).
+Several models of ASUS's routers include a service called *infosvr* that listens on UDP broadcast port 9999 on the LAN or WLAN interface. It's used by one of ASUS's tools to ease router configuration by automatically locating routers on the local subnet. This service runs with *root* privileges and contains an unauthenticated command execution vulnerability. The source code for this service, as well as the rest of the router, is available from [ASUS's Support Site](http://support.asus.com/).
 
 CVE
 ---
@@ -96,7 +96,7 @@ If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preced
 
 Recommendations
 ---------------
-Remove the remote command execution functionality from this service. Even if it were guarded with strong authentication, broadcasting a password to the entire LAN isn't really something to be desired. If command execution is truly desired it should be provided via SSH or similar secure mechanism.
+Remove the remote command execution functionality from this service. Even if it were guarded with strong authentication, broadcasting a password to the entire local network isn't really something to be desired. If command execution is truly desired it should be provided via SSH or similar secure mechanism.
 
 Workaround
 ----------
