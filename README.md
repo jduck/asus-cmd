@@ -18,6 +18,14 @@ Router   | Firmware Version          | Verified By
 RT-N66U  | 3.0.0.4.376_1071-g8696125 | Friedrich Postelstorfer
 RT-AC87U | 3.0.0.4.378_3754          | David Longenecker
 RT-N56U  | 3.0.0.4.374_5656          | @argilo
+RT-AC66R | 3.0.0.4.376_2524-g0013f52 | @asgh
+
+Not Affected Versions
+---------------------
+
+Router   | Firmware Version          | Verified By
+-------- | ------------------------- | ------------------------
+RT-AC66R | 3.0.0.4.376_3754-g5ef7c1f | @asgh
 
 Technical Details
 -----------------
