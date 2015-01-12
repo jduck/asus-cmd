@@ -35,7 +35,7 @@ Consider the following excerpt from the [ASUSWRT-Merlin project](https://github.
    ...
 ```
 
-The *processPacket* function is called after receiving a packet of *INFO_PDU_LENGTH* (512) bytes. The specific vulnerable code path is *main*->*processReq*->*procesPacket*. The service then casts the packet to a structure and checks that the *ServiceID* and *PacketType* fields match expected values.
+The *processPacket* function is called after receiving a packet of *INFO_PDU_LENGTH* (512) bytes. The specific vulnerable code path is *main*->*processReq*->*processPacket*. The service then casts the packet to a structure and checks that the *ServiceID* and *PacketType* fields match expected values.
 
 The following block contains what is believed to be the root cause of this vulnerability.
 
