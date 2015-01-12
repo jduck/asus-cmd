@@ -150,3 +150,9 @@ http://arstechnica.com/security/2015/01/got-an-asus-router-someone-on-your-netwo
 "ASUS bug lets those on your local network own your wireless router"<br />
 http://dnlongen.blogspot.com/2015/01/asus-bug-lets-those-on-your-local.html
 
+"Exploit allows Asus routers to be hacked from local network"<br />
+http://www.itworld.com/article/2867255/exploit-allows-asus-routers-to-be-hacked-from-local-network.html
+
+"Asus Wireless Routers Can Be Exploited By Anyone Inside the Network"<br />
+http://it.slashdot.org/story/15/01/09/1349229/asus-wireless-routers-can-be-exploited-by-anyone-inside-the-network
+
