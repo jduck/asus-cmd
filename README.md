@@ -35,7 +35,7 @@ Consider the following excerpt from the [ASUSWRT-Merlin project](https://github.
    ...
 ```
 
-The *processPacket* function is called after receiving a packet of *INFO_PDU_LENGTH* (512) bytes. The specific vulnerable code path is *main*->*processReq*->*procesPacket*. The service then casts the packet to a structure and checks that the *ServiceID* and *PacketType* fields match expected values.
+The *processPacket* function is called after receiving a packet of *INFO_PDU_LENGTH* (512) bytes. The specific vulnerable code path is *main*->*processReq*->*processPacket*. The service then casts the packet to a structure and checks that the *ServiceID* and *PacketType* fields match expected values.
 
 The following block contains what is believed to be the root cause of this vulnerability.
 
@@ -100,7 +100,7 @@ Moving on, the following switch statement dispatches processing based on the sup
    515                          system(cmdstr);
 ```
 
-If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preceding block processes the packet by casting it to a *PKT_SYSCMD* structure. As such, any members of *syscmd* are fully controlled by the attacker. Before taking care (**wink**) to NUL terminate the command string, the author executes the command on line 514. Following executing the command, the output is read from the temporary file and sent back to the source address of the initiating packet.
+If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preceding block processes the packet by casting it to a *PKT_SYSCMD* structure. As such, any members of *syscmd* are fully controlled by the attacker. Before taking care (**wink**) to NULL terminate the command string, the author executes the command on line 514. Following executing the command, the output is read from the temporary file and sent back to the source address of the initiating packet.
 
 Recommendations
 ---------------
