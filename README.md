@@ -18,6 +18,7 @@ Router   | Firmware Version          | Verified By
 RT-N66U  | 3.0.0.4.376_1071-g8696125 | Friedrich Postelstorfer
 RT-AC87U | 3.0.0.4.378_3754          | David Longenecker
 RT-N56U  | 3.0.0.4.374_5656          | @argilo
+DSL-AC68U | 3.0.0.4.376_2155-g79ade1b | [Damon Pollard](https://twitter.com/DamonLPollard/status/554813802219188224)
 
 Technical Details
 -----------------
