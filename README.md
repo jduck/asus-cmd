@@ -26,7 +26,7 @@ RT-AC66R    | 3.0.0.4.376_3602          | @facerolling
 RT-AC55U    | 3.0.0.4.376_6587-gaa506e9 | @pellaeon
 RT-N12HP_B1 | 3.0.0.4.374_1327          | @vittee
 
-Additionally, routers running firmware based on the community-backed asuswrt-merlin are vulnerable prior to version 3.0.0.4.376.49_5. Eric's changes can be viewed [here](https://github.com/RMerl/asuswrt-merlin/commit/2d7a0851b35d1a8dc994a18bbb0a83942bf5c4fc), [here](https://github.com/RMerl/asuswrt-merlin/commit/4f41f9ab6bc9d68cfe35a2422ac5cfa16c445961), and [here](https://github.com/RMerl/asuswrt-merlin/commit/97cf3c758dee0ffdcaa5383b2fda90cf2e268c6f).
+Additionally, routers running firmware based on the community-backed asuswrt-merlin are vulnerable prior to version 376.49_5.
 
 Routers using firmware revisions released on or after January 12th, 2015 should not be affected. The following table tracks reports of non-affected routers/firmwares.
 
@@ -136,9 +136,14 @@ $ ./asus-cmd "killall -9 infosvr"
 
 NOTE: you won't get response to this command. Again, this will need to be done each time the device restarts.
 
-Official Fix
-------------
-ASUS has released new firmware revisions for affected devices (3.0.0.4.376.3754) that is reportedly not vulnerable. I'm currently working to review their fix.
+Fixes Released
+--------------
+After the initial disclosure if this issue, several parties addressed the issue with their code bases.
+
+2015/01/08 - Eric Sauvageau fixed this issue in the asuswrt-merlin code base. The first release incorporating the fix is 376.49_5. His changes can be reviewed [here](https://github.com/RMerl/asuswrt-merlin/commit/2d7a0851b35d1a8dc994a18bbb0a83942bf5c4fc), [here](https://github.com/RMerl/asuswrt-merlin/commit/4f41f9ab6bc9d68cfe35a2422ac5cfa16c445961), and [here](https://github.com/RMerl/asuswrt-merlin/commit/97cf3c758dee0ffdcaa5383b2fda90cf2e268c6f).
+2015/01/12 - ASUS has released new firmware revisions for affected devices (3.0.0.4.376.3754) that is reportedly not vulnerable.
+
+I'm currently working to review their fix.
 
 Exploit
 -------
