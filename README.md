@@ -32,6 +32,7 @@ Router   | Firmware Version          | Verified By
 -------- | ------------------------- | ------------------------
 RT-AC66R | 3.0.0.4.376_3754-g5ef7c1f | @asgh
 
+Additionally, routers running firmware based on the community-backed asuswrt-merline are vulnerable prior to version 3.0.0.4.376.49_5. Eric's changes can be viewed [here](https://github.com/RMerl/asuswrt-merlin/commit/2d7a0851b35d1a8dc994a18bbb0a83942bf5c4fc), [here](https://github.com/RMerl/asuswrt-merlin/commit/4f41f9ab6bc9d68cfe35a2422ac5cfa16c445961), and [here](https://github.com/RMerl/asuswrt-merlin/commit/97cf3c758dee0ffdcaa5383b2fda90cf2e268c6f).
 
 Technical Details
 -----------------
