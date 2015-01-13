@@ -25,6 +25,7 @@ RT-AC66R    | 3.0.0.4.376_2524-g0013f52 | @asgh
 RT-AC66R    | 3.0.0.4.376_3602          | @facerolling
 RT-AC55U    | 3.0.0.4.376_6587-gaa506e9 | @pellaeon
 RT-N12HP_B1 | 3.0.0.4.374_1327          | @vittee
+RT-N16      | 3.0.0.4.376.45_0          | @razum2um
 
 The following routers/firmware versions are reportedly not affected:
 
