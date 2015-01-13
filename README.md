@@ -20,7 +20,7 @@ RT-AC87U | 3.0.0.4.378_3754          | David Longenecker
 RT-N56U  | 3.0.0.4.374_5656          | @argilo
 RT-AC68U | 3.0.0.4.376_3626-g9a8323e | @Arie
 DSL-N55U | 3.0.0.4.374_4422-gc83c78f | @S2-
-DSL-AC68U | 3.0.0.4.376_2158-g340202b | @magJ
+DSL-AC68U | 3.0.0.4.376_2158-g340202b | @magJ, @gitFurious
 RT-AC66R | 3.0.0.4.376_2524-g0013f52 | @asgh
 RT-AC66R | 3.0.0.4.376_3602          | @facerolling
 RT-AC55U | 3.0.0.4.376_6587-gaa506e9 | @pellaeon
