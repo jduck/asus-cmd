@@ -178,3 +178,9 @@ http://www.itworld.com/article/2867255/exploit-allows-asus-routers-to-be-hacked-
 "Asus Wireless Routers Can Be Exploited By Anyone Inside the Network"<br />
 http://it.slashdot.org/story/15/01/09/1349229/asus-wireless-routers-can-be-exploited-by-anyone-inside-the-network
 
+"Most Asus routers affected by hijack bug; exploit posted"
+http://www.zdnet.com/article/asus-routers-vulnerable-to-network-attack-exploit-published/
+
+"Root Command Execution Flaw Haunts ASUS Routers"
+http://threatpost.com/root-command-execution-flaw-haunts-asus-routers/110276
+
