@@ -31,9 +31,10 @@ Additionally, routers running firmware based on the community-backed asuswrt-mer
 
 Routers using firmware revisions released on or after January 12th, 2015 should not be affected. The following table tracks reports of non-affected routers/firmwares.
 
-Router   | Firmware Version          | Verified By
--------- | ------------------------- | ------------------------
-RT-AC66R | 3.0.0.4.376_3754-g5ef7c1f | @asgh
+Router      | Firmware Version          | Verified By
+----------- | ------------------------- | ------------------------
+RT-AC66R    | 3.0.0.4.376_3754-g5ef7c1f | @asgh
+RT-N12HP_B1 | 3.0.0.4.376_3754-g5ef7c1f | @vittee
 
 Technical Details
 -----------------
@@ -144,7 +145,24 @@ After the initial disclosure if this issue, several parties addressed the issue 
 2015/01/08 - Eric Sauvageau fixed this issue in the asuswrt-merlin code base. The first release incorporating the fix is 376.49_5. His changes can be reviewed [here](https://github.com/RMerl/asuswrt-merlin/commit/2d7a0851b35d1a8dc994a18bbb0a83942bf5c4fc), [here](https://github.com/RMerl/asuswrt-merlin/commit/4f41f9ab6bc9d68cfe35a2422ac5cfa16c445961), and [here](https://github.com/RMerl/asuswrt-merlin/commit/97cf3c758dee0ffdcaa5383b2fda90cf2e268c6f).
 2015/01/12 - ASUS has released new firmware revisions for affected devices (3.0.0.4.376.3754) that is reportedly not vulnerable.
 
-I'm currently working to review their fix.
+ASUS addressed the problem by ensuring the *ateCommand_flag* nvram variable is set to **1** prior to executing the supplied command. This variable is not set in typical builds.
+
+```
+loc_404958:
+la      $v0, 0x400000
+addiu   $a0, $v0, (aAtecommand_fla - 0x400000)  # "ateCommand_flag"
+la      $v0, 0x400000
+addiu   $a1, $v0, (g_ascONE - 0x400000)  # "1"
+la      $v0, 0x400000
+addiu   $t9, $v0, (check_nvram - 0x400000)
+jalr    $t9 ; check_nvram
+nop
+lw      $gp, 0x290+var_270($fp)
+bnez    $v0, lbl_execute_command
+nop
+sw      $zero, 0x290+var_14($fp)
+b       lbl_return_zero
+```
 
 Exploit
 -------
