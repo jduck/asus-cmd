@@ -121,7 +121,9 @@ If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preced
 
 Recommendations
 ---------------
-Remove the remote command execution functionality from this service. Even if it were guarded with strong authentication, broadcasting a password to the entire local network isn't really something to be desired. If command execution is truly desired it should be provided via SSH or similar secure mechanism.
+*End Users*: Update firmare to revision 3.0.0.4.376.3754 or newer. It's important to note that the router's "Check for Update" functionality may not work properly. Manually check the version of the firmware you're running and, if older, download/install the new firmware.
+
+*ASUS/Merlin*: Remove the remote command execution functionality from this service. Even if it were guarded with strong authentication, broadcasting a password to the entire local network isn't really something to be desired. If command execution is truly desired it should be provided via SSH or similar secure mechanism.
 
 Workaround
 ----------
