@@ -107,6 +107,7 @@ typedef struct iboxPKTCmd
 /* END IBOX related stuff */
 void alarm_handler(int signo)
 {
+    (void) signo; // Suppress the gcc warning, due to it is unused
     g_done = 1;
 }
 
