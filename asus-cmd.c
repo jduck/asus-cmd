@@ -107,6 +107,7 @@ typedef struct iboxPKTCmd
 /* END IBOX related stuff */
 void alarm_handler(int signo)
 {
+    (void) signo; // Suppress the gcc warning, due to it is unused
     g_done = 1;
 }
 
@@ -221,7 +222,7 @@ int main(int argc, char *argv[])
             perror("recvfrom");
             return 1;
         }
-        printf("[!] received %d bytes from %s:%u\n", nr, inet_ntoa(src.sin_addr), ntohs(src.sin_port));
+        printf("[!] received %zu bytes from %s:%u\n", nr, inet_ntoa(src.sin_addr), ntohs(src.sin_port));
 
         phdr = (IBOX_COMM_PKT_HDR *)inbuf;
         if (phdr->PacketType == NET_PACKET_TYPE_CMD) {
