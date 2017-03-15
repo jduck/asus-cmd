@@ -117,7 +117,7 @@ Moving on, the following switch statement dispatches processing based on the sup
    515                          system(cmdstr);
 ```
 
-If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preceding block processes the packet by casting it to a *PKT_SYSCMD* structure. As such, any members of *syscmd* are fully controlled by the attacker. Before taking care (**wink**) to NUL terminate the command string, the author executes the command on line 514. Following executing the command, the output is read from the temporary file and sent back to the source address of the initiating packet.
+If an attacker specifies the *OpCode* value of *NET_CMD_ID_MANU_CMD*, the preceding block processes the packet by casting it to a *PKT_SYSCMD* structure. As such, any members of *syscmd* are fully controlled by the attacker. Before taking care (**wink**) to NULL terminate the command string, the author executes the command on line 514. Following executing the command, the output is read from the temporary file and sent back to the source address of the initiating packet.
 
 Recommendations
 ---------------
